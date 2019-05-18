@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<!--<p>-->
+<!--  <strong>User:</strong>-->
+  <%#= @document.user %>
+<!--</p>-->
+
+<p>
+  <strong>Document:</strong><br><br>
+<%= image_tag @document.document_attached.url(:medium) %></p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>

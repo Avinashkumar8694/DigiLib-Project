@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DigiLib</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    <meta charset="utf-5">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>DigiLib</title>
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+    <link href="https://getbootstrap.com/docs/3.3/examples/carousel/carousel.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <!-- "navigation"-->
+<%if user_signed_in? %>
+  <div class="navbar-wrapper">
+    <div class="container">
+      <!-- "DigiLIb header"-->
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DigiLib</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/">Home</a></li>
+
+             <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SUBJECTS <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="it.html">Internet Technology</a></li>
+                  <li><a href="dbms.html">DBMS</a></li>
+                  <li><a href="ds.html">Data Stucture</a></li>
+
+                </ul> -->
+              </li>
+              <li>
+                
+                <%= link_to "Logout",destroy_user_session_path, method: :delete  %>
+
+              
+              </li>
+              <li>
+                
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+<% end %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <!-- "data-interval="1000" if we want time duration for slide and the time in microseconds"-->
+  
+  <div class="container marketing" style="width: 100%;">
+
+    <div class="row">
+      <%= yield %>
+
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        
+        <hr class="featurette-divider">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; Natitional Institute Of Teachnology 2019 &middot; <a href="#">Privacy</a> &middot; <a
+          href="#">Terms</a></p>
+        </footer>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+      <script src="https://getbootstrap.com/docs/3.3/assets/js/vendor/holder.min.js"></script>
+      <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<center><div><h1><strong>Documets</strong></h1></div></center>
+<div class="col-md-12 " style="margin-bottom: 50px; font-size: 2em; ">
+  <div class="col-md-4">Upload Document</div>
+    <div class="col-md-4 btn btn-info" > <strong> <%= link_to 'New Document', new_document_path %></strong></div>
+</div>
+    <% @doc.each do |document| %>
+
+
+      <div class="card col-md-3" style="margin-bottom: 50px;">
+          
+         
+          <img class="img-circle" src="/image/doc-512.png"
+       alt="Generic placeholder image" width="80%" height="80%">
+          
+          <div class="card-body col-md-12">
+            <div class=" col-md-12">
+              <strong style="overflow: hidden; width: 100%; margin-top: 10px; position: relative;"><center><p><%= document.document_attached_file_name %></p></center>  </strong> 
+               <strong style="overflow: hidden; width: 100%; margin-top: 10px; position: relative;"><center><p>Subject:<%= document.subject %></p></center>  </strong> 
+               </div>
+            <div class=" col-md-12 btn-group">
+              <div class="col-md-6"><h4><%= link_to 'download', document.document_attached.url , :class => 'btn btn-md btn-info' %></h4></div>
+              
+              <div class="col-md-6"><h4><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-md btn-info'  %></h4></div>
+ 
+              </div>
+          </div>
+        </div>
+    <% end %>

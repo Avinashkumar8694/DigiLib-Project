@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="well">
+    <center><strong><h1>Videos</h1></strong></center>
+    <div class="col-md-12 " style="margin-bottom: 50px; font-size: 2em; ">
+  <div class="col-md-4">Upload Videos links</div>
+    <div class="col-md-4 btn btn-info" > <strong> <%= link_to 'New Video', new_video_path %>></strong></div>
+</div>
+</div>
+
+  
+
+  
+    <% @videos.each do |video| %>
+
+        <div class="card col-md-6" style="margin-bottom: 50px;">
+          
+          <%= content_tag(:iframe, '', src: video.link, width: 560, height: 315, frameborder: 0 ) %>
+          <div class="card-body ">
+            <div class="card-text col-md-6"><td><h4><%= video.title %></h4></td></div>
+            <div class=" col-md-6">
+              
+              
+              <div class="col-md-4"><h4><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></h4></div>
+ 
+              </div>
+          </div>
+        </div>
+
+    <% end %>
+  
+
+
+<br>
+
+
